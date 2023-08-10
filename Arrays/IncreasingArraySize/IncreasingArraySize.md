@@ -9,7 +9,7 @@ int *q = new int[10]; //Dynamically allocate memory for int arrays of size 10
 ```
 p[0] = 1;
 p[1] = 5;
-p[2] = 7;     
+p[2] = 7;
 p[3] = 9;
 p[4] = 11;
 ```
