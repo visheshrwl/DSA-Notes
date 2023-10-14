@@ -8,7 +8,7 @@ struct Node {
   struct Node* prev;
 };
 
-// // insert node at the front
+// insert node at the front
 void insertFront(struct Node** head, int data) {
   // allocate memory for newNode
   struct Node* newNode = new Node;
