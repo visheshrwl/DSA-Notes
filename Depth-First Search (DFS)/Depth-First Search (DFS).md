@@ -1,35 +1,7 @@
-# Glossary
-
-- **Depth-First Search (DFS):** A fundamental graph traversal algorithm used to explore and navigate through graph-like data structures.
-
-- **Traversal:** The act of visiting all the nodes of a graph or data structure in a systematic way.
-
-- **Recursion:** A programming technique where a function calls itself in order to solve a problem.
-
-- **Stack Overflow:** An error that occurs when the call stack, which keeps track of function calls, overflows due to excessive recursion.
-
-- **Graph:** A data structure that represents a set of nodes connected by edges.
-
-- **Connected Components:** Groups of nodes in a graph where each node is connected to every other node in the group.
-
-- **Cycle Detection:** Identifying cycles (loops) within a graph, which can have applications in various problems.
-
-- **Topological Sorting:** An ordering of nodes in a directed acyclic graph (DAG) where for each directed edge, the source node comes before the target node.
-
-- **Maze Solving:** The process of navigating through a maze to find a path from the start to the end.
-
-- **Pseudocode:** A high-level description of an algorithm that uses human-readable language and often resembles code but is not tied to a specific programming language.
-
-- **TOC (Table of Contents):** A navigational element in a document that provides links to various sections of the document.
-
-
-
-
-
-
+# Table of Content
 <!-- TOC -->
 
-- [Glossary](#glossary)
+- [Table of Content](#table-of-content)
 - [Depth-First Search (DFS)](#depth-first-search-dfs)
   - [Overview](#overview)
     - [Key Characteristics:](#key-characteristics)
@@ -40,10 +12,9 @@
   - [Iterative DFS (Depth-First Search)](#iterative-dfs-depth-first-search)
 - [Applications](#applications)
 - [Conclusion](#conclusion)
+- [Glossary](#glossary)
 
 <!-- TOC -->
-
-<!-- <ul><li><a href="#depth-first-search-dfs" target="_new">Depth-First Search (DFS)</a></li><li><a href="#overview" target="_new">Overview</a></li><li><a href="#pseudocode" target="_new">Pseudocode</a></li><li><a href="#graph-representation" target="_new">Graph Representation</a></li><li><a href="#implementation" target="_new">Implementation</a><ul><li><a href="#recursive-dfs-depth-first-search" target="_new">Recursive DFS (Depth-First Search)</a></li><li><a href="#iterative-dfs-depth-first-search" target="_new">Iterative DFS (Depth-First Search)</a></li></ul></li><li><a href="#applications" target="_new">Applications</a></li><li><a href="#conclusion" target="_new">Conclusion</a></li></ul> -->
 
 # Depth-First Search (DFS)
 
@@ -95,6 +66,7 @@ Let's illustrate the DFS algorithm with a simple graph. This graph will serve as
  Traversal: A, B, D, H, E, I, F, J, C, G, K, L
 
 </pre>
+> REMEMBER, Whether using an iterative or recursive approach, the fundamental principle of DFS remains the same: exploring nodes deeply and systematically before moving to other unexplored branches. However, the specific order in which nodes are visited can differ based on these factors, resulting in varying traversal paths.
 
 # Implementation
 
@@ -106,7 +78,7 @@ Recursive DFS is the most straightforward implementation of DFS and is easy to u
 def recursive_dfs(graph, node, visited):
     if node not in visited:
         visited.add(node)
-        # Process the node as needed
+        # Process the node as needed (like printing the node)
         for neighbor in graph[node]:
             if neighbor not in visited:
                 recursive_dfs(graph, neighbor, visited)
@@ -125,7 +97,7 @@ def iterative_dfs(graph, start):
         node = stack.pop()
         if node not in visited:
             visited.add(node)
-            # Process the node as needed
+            # Process the node as needed (like printing the node)
             stack.extend(neighbor for neighbor in graph[node] if neighbor not in visited)
 ```
 
@@ -143,3 +115,28 @@ Depth-First Search is versatile and can be applied to various graph-related prob
 # Conclusion
 
 Depth-First Search is a powerful algorithm for traversing and exploring graphs and tree-like structures. Whether you choose a recursive or iterative approach depends on the specific problem and the nature of the graph you are working with. Understanding DFS and its applications is crucial for both beginner and experienced programmers dealing with graph-related challenges.
+
+
+# Glossary
+
+- **Depth-First Search (DFS):** A fundamental graph traversal algorithm used to explore and navigate through graph-like data structures.
+
+- **Traversal:** The act of visiting all the nodes of a graph or data structure in a systematic way.
+
+- **Recursion:** A programming technique where a function calls itself in order to solve a problem.
+
+- **Stack Overflow:** An error that occurs when the call stack, which keeps track of function calls, overflows due to excessive recursion.
+
+- **Graph:** A data structure that represents a set of nodes connected by edges.
+
+- **Connected Components:** Groups of nodes in a graph where each node is connected to every other node in the group.
+
+- **Cycle Detection:** Identifying cycles (loops) within a graph, which can have applications in various problems.
+
+- **Topological Sorting:** An ordering of nodes in a directed acyclic graph (DAG) where for each directed edge, the source node comes before the target node.
+
+- **Maze Solving:** The process of navigating through a maze to find a path from the start to the end.
+
+- **Pseudocode:** A high-level description of an algorithm that uses human-readable language and often resembles code but is not tied to a specific programming language.
+
+---
