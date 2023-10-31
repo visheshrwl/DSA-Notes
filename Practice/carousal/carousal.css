@@ -1,0 +1,139 @@
+*{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    scroll-behavior:smooth ;
+    transition: all 1s ease-in-out;
+}
+
+#text{
+    color: white;
+    position: absolute;
+    top: 60vh;
+    left: 34vw;
+    z-index: 2;
+}
+#text>h2{
+    font-size: 6vh;
+    z-index: 2;
+}
+#text>p{
+    position: relative;
+    font-size: larger;
+    z-index: 2;
+}
+#interests{
+    background-color: transparent;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+}
+#cr-bg{
+    z-index: -1;
+    width: 100vw;
+    height: 100vh;
+}
+#cr-bg-img{
+    width: 100vw;
+    height: 100vh;
+    filter: brightness(30%) blur(8px);;
+}
+
+#carousal-img-div{
+    height: 60vh;
+    width: 20vw;
+    overflow: hidden;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 1);
+}
+#prev-img-div,#next-img-div{
+    height: 40vh;
+    width: 15vw;
+    overflow: hidden;
+    opacity: 0.5;
+}
+#prev-img-div{
+    margin-right: 25px;
+    /*transform: rotate(2deg);*/
+    transform: rotateY(-45deg);
+    box-shadow: -40px -10px 16px rgba(0, 0, 0, 1);
+
+}
+
+#next-img-div{
+    margin-left: 25px;
+    transform: rotateY(45deg);
+    box-shadow: 40px -10px 16px rgba(0, 0, 0, 1);
+
+}
+#prev-img-div:hover{
+    transition: 1s ease-in-out;
+    transform: rotateY(30deg);
+    opacity: 0.6;
+    box-shadow: 20px -10px 16px rgba(0, 0, 0, 1);
+
+}
+#next-img-div:hover{
+    transition: 1s ease-in-out;
+    transform: rotateY(-30deg);
+    opacity: 0.6;
+    box-shadow: -20px -10px 16px rgba(0, 0, 0, 1);
+}
+#prev-img-div>img{
+    height: 100%;
+    width: 100%;
+
+}
+#next-img-div>img{
+    height: 100%;
+    width: 100%;
+}
+#carousal-img-div>img{
+    height: 100%;
+    width: 100%;
+}
+.carousal-arrow{
+    height: 10vh;
+    width: 5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.carousal-arrow:hover{
+    cursor: pointer;
+}
+i{
+    color: white;
+}
+@media(max-width:600px){
+    #carousal-img-div{
+        width: 40vw;
+        height: 45vh
+    };
+    #text{
+        color: white;
+        position: absolute;
+        top: 60vh;
+        left: 15vw;
+        z-index: 2;
+    }
+    #text>h2{
+        font-size: 3.5vh;
+        z-index: 2;
+    }
+    #text>p{
+        position: relative;
+        font-size: small;
+        z-index: 2;
+    }
+}
+@media(min-width:605px) and (max-width:1368px){
+    #carousal-img-div{
+        width: 40vw;
+    };
+
+}

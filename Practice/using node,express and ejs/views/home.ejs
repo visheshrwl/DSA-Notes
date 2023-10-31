@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify</title>
+    <script src="https://kit.fontawesome.com/6a4c513f0a.js" crossorigin="anonymous"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden
+        }
+        #bg-div{
+            z-index: -1;
+            height: 100vh;
+            width: 100vw;
+            overflow-x: hidden;
+            display: flex;
+        }
+        #black{
+            background-color: black;
+            width: 50vw;
+        }
+        #white{
+            width: 50vw;
+        }
+        i{
+            margin-right: 3px;
+        }
+        #l-div{
+            position: absolute;
+            top: 2vh;
+            width: 100vw;
+            height: 100vh;
+        }
+        #l-but{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 85vh;
+            width: 100vw;        }
+        a{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            margin-right: 5vw;
+            margin-left: 5vw;
+            border-radius: 4px;
+            padding: 2vh;
+        }
+        #but-1{
+            background-color:white ;
+            color: black;
+        }
+        #but-1:hover{
+            background-color: #1ed760;
+            color: white;
+        }
+        #but-2{
+            background-color:black ;
+            color: white;
+        }
+        #but-2:hover{
+            background-color: #1ed760;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div id="bg-div">
+        <div id="black" ></div>
+        <div id="white"></div>
+    </div>
+    <div id="l-div">
+        <h1 style="color: white;"><i class="fa-brands fa-spotify" style="color: #1ed760;"></i>
+            Spotify</h1>
+            <div id="l-but">
+                <a id="but-1" href="login" style="width: 12vw; height: 5vh; ;font-size: larger;" >log in</a>
+                <a id="but-2" href="sign_up" style="width: 12vw; height: 5vh;font-size: larger;" >Sign up</a>
+            </div>
+    </div>
+</body>
+</html>
