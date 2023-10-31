@@ -1,105 +1,48 @@
-#include <iostream>
-using namespace std;
-
-// perform bubble sort
-void bubbleSort(int array[], int size) {
-
-  // loop to access each array element
-  for (int step = 0; step < size; ++step) {
-      
-    // loop to compare array elements
-    for (int i = 0; i < size - step; ++i) {
-
-      // compare two adjacent elements
-      // change > to < to sort in descending order
-      if (array[i] > array[i + 1]) {
-
-        // swapping elements if elements
-        // are not in the intended order
-        int temp = array[i];
-        array[i] = array[i + 1];
-        array[i + 1] = temp;
-      }
-    }
-  }
-}
-
-// print array
-void printArray(int array[], int size) {
-  for (int i = 0; i < size; ++i) {
-    cout << "  " << array[i];
-  }
-  cout << "\n";
-}
-
+#include <math.h>
+#include <stdio.h>
 int main() {
-  int data[] = {-2, 45, 0, 11, -9};
-  
-  // find array's length
-  int size = sizeof(data) / sizeof(data[0]);
-  
-  bubbleSort(data, size);
-  
-  cout << "Sorted Array in Ascending Order:\n";  
-  printArray(data, size);
-}
+  int low, high, number, originalNumber, rem, count = 0;
+  double result = 0.0;
+  printf("Enter two numbers(intervals): ");
+  scanf("%d %d", &low, &high);
+  printf("Armstrong numbers between %d and %d are: ", low, high);
 
+  // swap numbers if high < low
+  if (high < low) {
+    high += low;
+    low = high - low;
+    high -= low;
+  }
+   
+  // iterate number from (low + 1) to (high - 1)
+  // In each iteration, check if number is Armstrong
+  for (number = low + 1; number < high; ++number) {
+    originalNumber = number;
 
-
-// Optimized bubble sort in C++
-
-#include <iostream>
-using namespace std;
-
-// perform bubble sort
-void bubbleSort(int array[], int size) {
-    
-  // loop to access each array element
-  for (int step = 0; step < (size-1); ++step) {
-      
-    // check if swapping occurs
-    int swapped = 0;
-    
-    // loop to compare two elements
-    for (int i = 0; i < (size-step-1); ++i) {
-        
-      // compare two array elements
-      // change > to < to sort in descending order
-      if (array[i] > array[i + 1]) {
-
-        // swapping occurs if elements
-        // are not in intended order 
-        int temp = array[i];
-        array[i] = array[i + 1];
-        array[i + 1] = temp;
-        
-        swapped = 1;
-      }
+    // number of digits calculation
+    while (originalNumber != 0) {
+      originalNumber /= 10;
+      ++count;
     }
 
-    // no swapping means the array is already sorted
-    // so no need of further comparison
-    if (swapped == 0)
-      break;
-  }
-}
+    originalNumber = number;
 
-// print an array
-void printArray(int array[], int size) {
-  for (int i = 0; i < size; ++i) {
-    cout << "  " << array[i];
-  }
-  cout << "\n";
-}
+    // result contains sum of nth power of individual digits
+    while (originalNumber != 0) {
+      rem = originalNumber % 10;
+      result += pow(rem, count);
+      originalNumber /= 10;
+    }
 
-int main() {
-  int data[] = {-2, 45, 0, 11, -9};
-  
-  // find the array's length
-  int size = sizeof(data) / sizeof(data[0]);
-  
-  bubbleSort(data, size);
-  
-  cout << "Sorted Array in Ascending Order:\n";
-  printArray(data, size);
+    // check if number is equal to the sum of nth power of individual digits
+    if ((int)result == number) {
+      printf("%d ", number);
+    }
+
+    // resetting the values
+    count = 0;
+    result = 0;
+  }
+
+  return 0;
 }
